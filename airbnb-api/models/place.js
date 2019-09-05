@@ -1,4 +1,6 @@
-module.exports = mongoose.model("Place", {
+const mongoose = require("mongoose");
+
+module.exports = mongoose.model("Places", {
   title: {
     type: String,
     required: [true, "Title is required"]
