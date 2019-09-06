@@ -1,5 +1,7 @@
+//imports
 const Places = require("../models/place");
 
+//modules
 module.exports = (req, res) => {
   Places.find(req.query)
     .then(data => {
