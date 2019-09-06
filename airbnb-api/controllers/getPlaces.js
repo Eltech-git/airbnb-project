@@ -1,7 +1,7 @@
 const Places = require("../models/place");
 
 module.exports = (req, res) => {
-  Places.find({ title: "Unbelievable infinite pool" })
+  Places.find(req.query)
     .then(data => {
       res.send(data);
     })
