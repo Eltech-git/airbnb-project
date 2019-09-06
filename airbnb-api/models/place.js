@@ -3,27 +3,27 @@ const mongoose = require("mongoose");
 module.exports = mongoose.model("Places", {
   title: {
     type: String,
-    required: [true, "Title is required"]
+    required: [false, "Title is required"]
   },
   description: {
     type: String,
-    required: [true, "Description is required"]
+    required: [, "Description is required"]
   },
   type: {
     type: String,
-    required: [true, "Type is required"]
+    required: [false, "Type is required"]
   },
   city: {
     type: String,
-    required: [true, "City is required"]
+    required: [false, "City is required"]
   },
   country: {
     type: String,
-    required: [true, "Country is required"]
+    required: [false, "Country is required"]
   },
   price: {
     type: Number,
-    required: [true, "Price is required"]
+    required: [false, "Price is required"]
   },
   rating: {
     type: Number,
@@ -31,10 +31,10 @@ module.exports = mongoose.model("Places", {
   },
   guests: {
     type: Number,
-    required: [true, "Number of guests is required"]
+    required: [false, "Number of guests is required"]
   },
   bathrooms: {
     type: Number,
-    required: [true, "Number of bathrooms is required"]
+    required: [false, "Number of bathrooms is required"]
   }
 });
