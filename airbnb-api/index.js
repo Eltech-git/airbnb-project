@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 app.get("/", require("./controllers/root"));
 app.get("/places", require("./controllers/getPlaces"));
+app.get("/places/:id", require("./controllers/getPlace"));
 app.post("/places", require("./controllers/postPlaces"));
 app.listen(4000, () => {
   console.log("The server you request is ready and running on port 4000");
