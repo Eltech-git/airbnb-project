@@ -13,6 +13,10 @@ module.exports = mongoose.model("Places", {
     type: String,
     required: [true, "Description is required"]
   },
+  host: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Users"
+  },
   type: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Types"
