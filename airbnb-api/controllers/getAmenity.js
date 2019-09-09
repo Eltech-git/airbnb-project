@@ -1,10 +1,9 @@
 //imports
-const Types = require("../models/type");
+const Amenity = require("../models/amenity");
 
 //modules
 module.exports = (req, res) => {
-  //this searches the Types class in the DB to find all the documents within it.
-  Types.find({})
+  Amenity.find({})
     .then(data => {
       res.send(data);
     })
