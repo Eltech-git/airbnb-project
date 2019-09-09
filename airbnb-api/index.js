@@ -13,8 +13,8 @@ app.use(bodyParser.json());
 
 app.get("/", require("./controllers/root"));
 app.get("/places", require("./controllers/getPlaces"));
-app.get("/places/:id", require("./controllers/getPlace"));
-app.post("/places", require("./controllers/postPlaces"));
+app.get("/place/:id", require("./controllers/getPlace"));
+app.post("/place", require("./controllers/postPlaces"));
 app.patch("/places/:id", require("./controllers/patchPlace"));
 app.delete("/places/:id", require("./controllers/deletePlace"));
 app.post("/types", require("./controllers/postType"));

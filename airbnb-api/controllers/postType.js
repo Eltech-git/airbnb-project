@@ -1,9 +1,9 @@
 //imports
-const Type = require("../models/type");
+const Types = require("../models/type");
 
 //modules
 module.exports = (req, res) => {
-  Type.create(req.body)
+  Types.create(req.body)
     .then(data => {
       res.send(data);
     })

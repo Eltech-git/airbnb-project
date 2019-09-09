@@ -7,11 +7,11 @@ module.exports = mongoose.model("Places", {
   },
   description: {
     type: String,
-    required: [, "Description is required"]
+    required: [true, "Description is required"]
   },
   type: {
-    type: String,
-    required: [false, "Type is required"]
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Types"
   },
   city: {
     type: String,
