@@ -11,14 +11,29 @@ app.use(bodyParser.json());
 
 //Routes
 
+//Main
 app.get("/", require("./controllers/root"));
+
+//Places
+
 app.get("/places", require("./controllers/getPlaces"));
 app.get("/place/:id", require("./controllers/getPlace"));
 app.post("/place", require("./controllers/postPlaces"));
 app.patch("/places/:id", require("./controllers/patchPlace"));
 app.delete("/places/:id", require("./controllers/deletePlace"));
+
+//Types
+
+app.post("/types", require("./controllers/postType"));
 app.post("/types", require("./controllers/postType"));
 app.get("/types", require("./controllers/getType"));
+
+//User
+
+app.post("/user", require("./controllers/postUser"));
+
+//Operating port
+
 app.listen(4000, () => {
   console.log("The server you request is ready and running on port 4000");
 });
