@@ -1,9 +1,9 @@
-//Imports
-const Places = require("../models/place");
+//imports
+const Type = require("../models/type");
 
 //modules
 module.exports = (req, res) => {
-  Places.find(req.query)
+  Type.find({})
     .then(data => {
       res.send(data);
     })
