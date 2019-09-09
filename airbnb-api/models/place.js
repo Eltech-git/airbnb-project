@@ -44,5 +44,6 @@ module.exports = mongoose.model("Places", {
   bathrooms: {
     type: Number,
     required: [false, "Number of bathrooms is required"]
-  }
+  },
+  images: [String]
 });
