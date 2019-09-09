@@ -5,6 +5,12 @@ const Places = require("../models/place");
 module.exports = (req, res) => {
   Places.findById({ _id: req.params.id })
     .populate("type")
+    .populate({
+      path: "host",
+      select: "name avatar"
+    })
+    .lean()
+    // .select("name avatar")
     .then(data => {
       res.send(data);
     })
