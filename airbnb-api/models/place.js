@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 module.exports = mongoose.model("Places", {
   title: {
     type: String,
-    required: [false, "Title is required"]
+    required: [true, "Title is required"]
   },
   description: {
     type: String,
@@ -15,7 +15,8 @@ module.exports = mongoose.model("Places", {
   },
   host: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Users"
+    ref: "Users",
+    required: [true, "host name is required"]
   },
   type: {
     type: mongoose.Schema.Types.ObjectId,
@@ -23,15 +24,15 @@ module.exports = mongoose.model("Places", {
   },
   city: {
     type: String,
-    required: [false, "City is required"]
+    required: [true, "City is required"]
   },
   country: {
     type: String,
-    required: [false, "Country is required"]
+    required: [true, "Country is required"]
   },
   price: {
     type: Number,
-    required: [false, "Price is required"]
+    required: [true, "Price is required"]
   },
   rating: {
     type: Number,
@@ -39,11 +40,21 @@ module.exports = mongoose.model("Places", {
   },
   guests: {
     type: Number,
-    required: [false, "Number of guests is required"]
+    required: [true, "Number of guests is required"]
   },
   bathrooms: {
     type: Number,
-    required: [false, "Number of bathrooms is required"]
+    required: [true, "Number of bathrooms is required"]
   },
-  images: [String]
+  bedrooms: {
+    type: Number,
+    required: [true, "Number of bedrooms is required"]
+  },
+  images: [String],
+  amenities: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "amenity"
+    }
+  ]
 });
