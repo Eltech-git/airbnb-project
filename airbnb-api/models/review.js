@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 
 //modules
 
-module.exports = mongoose.model("Review", {
-  autor: {
+module.exports = mongoose.model("Reviews", {
+  author: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Users"
   },

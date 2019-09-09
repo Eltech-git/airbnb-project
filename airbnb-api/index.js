@@ -28,6 +28,11 @@ app.post("/types", require("./controllers/postType"));
 app.post("/types", require("./controllers/postType"));
 app.get("/types", require("./controllers/getType"));
 
+//Reviews
+
+app.post("/reviews", require("./controllers/postReviews"));
+app.get("/reviews", require("./controllers/getReviews"));
+
 //Amenities
 
 app.post("/amenities", require("./controllers/postAmenity"));
