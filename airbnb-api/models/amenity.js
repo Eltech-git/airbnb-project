@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 //modules
 
-module.exports = mongoose.model("Amenity", {
+module.exports = mongoose.model("Amenities", {
   name: {
     type: String,
     required: [true, "the name of the amenitiy is required"]
