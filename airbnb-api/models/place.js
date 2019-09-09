@@ -1,4 +1,8 @@
+//Imports
+
 const mongoose = require("mongoose");
+
+//modules
 
 module.exports = mongoose.model("Places", {
   title: {
