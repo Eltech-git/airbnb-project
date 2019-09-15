@@ -1,5 +1,6 @@
 //imports
 const Places = require("../models/place");
+const Reviews = require("../models/review");
 
 //module
 module.exports = (req, res) => {
@@ -7,6 +8,7 @@ module.exports = (req, res) => {
   Places.findById({ _id: req.params.id })
     //it will populate for type if id is given
     .populate("type")
+    .populate("amenities")
     //it will populate host , if given, displaying name and avatar
     .populate({
       path: "host",
@@ -15,8 +17,18 @@ module.exports = (req, res) => {
     //it will execute JS operations within the script
     .lean()
     //it will respond with the data extrapolated from the DB
-    .then(data => {
-      res.send(data);
+    .then(place => {
+      Reviews.find({
+        place: req.params.id
+      })
+        .populate("author")
+        .then(reviews => {
+          place.reviews = reviews;
+          res.send(place);
+        })
+        .catch(err => {
+          res.send(err);
+        });
     })
     //if the script doesent work, it will display an error
     .catch(err => {
