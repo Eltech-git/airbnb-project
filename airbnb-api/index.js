@@ -26,7 +26,6 @@ app.delete("/places/:id", require("./controllers/deletePlace"));
 //Types
 
 app.post("/types", require("./controllers/postType"));
-app.post("/types", require("./controllers/postType"));
 app.get("/types", require("./controllers/getType"));
 
 //Reviews
