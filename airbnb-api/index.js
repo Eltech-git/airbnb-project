@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const database = require("./modules/database");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 let app = express();
 
 //middleware
@@ -44,6 +45,6 @@ app.post("/user", require("./controllers/postUser"));
 
 //Operating port
 
-app.listen(4000, () => {
+app.listen(`${process.env.PORT}`, () => {
   console.log("The server you request is ready and running on port 4000");
 });
