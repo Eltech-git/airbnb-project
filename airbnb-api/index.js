@@ -45,5 +45,7 @@ app.post("/user", require("./controllers/postUser"));
 //Operating port
 
 app.listen(`${process.env.PORT}`, () => {
-  console.log("The server you request is ready and running on port 4000");
+  console.log(
+    `The server you request is ready and running on port ${process.env.PORT}`
+  );
 });
