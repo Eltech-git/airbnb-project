@@ -3,10 +3,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const database = require("./modules/database");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 require("dotenv").config();
 let app = express();
 
 //middleware
+app.use(cors({ credentials: true }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
